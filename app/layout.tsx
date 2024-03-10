@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <nav className="flex gap-3 justify-center mt-5">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+        </nav>
+      </body>
     </html>
   );
 }
