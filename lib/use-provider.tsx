@@ -5,8 +5,7 @@ import {
     ReactNode,
     createContext,
     useContext,
-    type Context,
-    useState
+    type Context
 } from "react";
 
 const _Map = <T,>() => new Map<string, T>();
@@ -37,11 +36,10 @@ export const useProvider = <T,>(key: string, initialValue?: T) => {
     return useContext(provider.value);
 };
 
-export const useShared = <T,>(key: string, initialValue?: T) => {
+export const useShared = <T,A>(key: string, fn: (value?: A) => T, initialValue?: A) => {
     let state = undefined;
     if (initialValue !== undefined) {
-        const _useState = useState;
-        state = _useState(initialValue);
+        state = fn(initialValue);
     }
     return useProvider(key, state);
 };

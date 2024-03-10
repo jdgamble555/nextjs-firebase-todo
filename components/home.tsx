@@ -6,7 +6,7 @@ import Profile from "./profile";
 
 export default function Home() {
 
-    const [user] = useUser();
+    const [user] = useUser({ data: null, loading: true });
 
     return (
         <div className="text-center">

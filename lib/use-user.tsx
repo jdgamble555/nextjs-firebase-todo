@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useShared } from "./use-provider";
 import {
     User,
@@ -16,15 +16,14 @@ export interface userData {
     email: string | null;
 };
 
-export function useUser() {
+type UserState = {
+    loading: boolean;
+    data: userData | null;
+};
 
-    const _store = useShared<{
-        loading: boolean,
-        data: userData | null
-    }>('user', {
-        loading: true,
-        data: null
-    });
+export function _useUser(initialValue: UserState = { loading: true, data: null }) {
+
+    const _store = useState<UserState>(initialValue);
 
     const setUser = _store[1];
 
@@ -57,6 +56,8 @@ export function useUser() {
 
     return _store;
 }
+
+export const useUser = (initialValue?: UserState) => useShared('user', _useUser, initialValue);
 
 export const loginWithGoogle = () => signInWithPopup(auth, new GoogleAuthProvider());
 
