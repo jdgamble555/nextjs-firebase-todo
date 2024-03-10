@@ -1,7 +1,8 @@
 'use client';
 
-import { Loading } from "@/lib/helpers";
+import { Loading, Login } from "@/lib/helpers";
 import { useUser } from "@/lib/use-user";
+import Profile from "./profile";
 
 export default function Home() {
 
@@ -10,7 +11,7 @@ export default function Home() {
     return (
         <div className="text-center">
             <h1 className="text-3xl font-semibold my-3">NextJS Firebase Todo App</h1>
-            {user.loading ? <Loading /> : user.data ? 'profile' : 'login'}
+            {user.loading ? <Loading /> : user.data ? <Profile /> : <Login />}
         </div>
     );
 }

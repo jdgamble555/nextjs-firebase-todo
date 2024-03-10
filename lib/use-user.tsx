@@ -35,10 +35,8 @@ export function useUser() {
         // subscribe to user changes
         return onIdTokenChanged(auth, (_user: User | null) => {
 
-            setUser(v => ({ ...v, loading: true }));
-
             if (!_user) {
-                setUser({ data: null, loading: true });
+                setUser({ data: null, loading: false });
                 return;
             }
 
@@ -52,7 +50,7 @@ export function useUser() {
             }
 
             // set store
-            setUser(v => ({ ...v, data }));
+            setUser({ loading: false, data });
         });
 
     }, [setUser]);
