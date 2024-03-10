@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useShared } from "./use-provider";
+import { useShared } from "./use-shared";
 import {
     User,
     onIdTokenChanged,

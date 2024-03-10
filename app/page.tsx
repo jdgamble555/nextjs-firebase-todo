@@ -1,5 +1,5 @@
 import Home from "@/components/home";
-import { Provider } from "@/lib/use-provider";
+import { Provider } from "@/lib/use-shared";
 
 const HomePage = () => {
     return (
