@@ -10,7 +10,9 @@ export default function Home() {
 
     return (
         <div className="text-center">
-            <h1 className="text-3xl font-semibold my-3">NextJS Firebase Todo App</h1>
+            <h1 className="text-3xl font-semibold my-3">
+                NextJS Firebase Todo App
+            </h1>
             {user.loading ? <Loading /> : user.data ? <Profile /> : <Login />}
         </div>
     );

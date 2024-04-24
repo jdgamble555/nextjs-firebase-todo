@@ -104,7 +104,10 @@ export function useTodos(
     return _store[0];
 };
 
-export const addTodo = (e: FormEvent<HTMLFormElement>, uid: string) => {
+export const addTodo = (
+    e: FormEvent<HTMLFormElement>,
+    uid: string
+) => {
 
     e.preventDefault();
 
