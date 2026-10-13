@@ -5,7 +5,7 @@ import Todos from "./todos";
 
 export default function Profile() {
 
-    const [user] = useUser();
+    const user = useUser();
 
     if (!user.data) {
         return;

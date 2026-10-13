@@ -1,12 +1,15 @@
 import Home from "@/components/home";
-import { Provider } from "@/lib/use-shared";
+import { UserProvider } from "@/lib/use-user";
 
 const HomePage = () => {
     return (
-        <Provider>
+        <main>
+        <UserProvider>
             <Home />
-        </Provider>
+        </UserProvider>
+        </main>
     );
 };
 
 export default HomePage;
+

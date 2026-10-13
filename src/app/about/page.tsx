@@ -1,5 +1,9 @@
 import { getAbout } from "@/lib/about";
 
+export const metadata = { title: "About" };
+
+export const dynamic = "force-dynamic";
+
 export default async function AboutPage() {
 
     const about = await getAbout();
