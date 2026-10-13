@@ -4,7 +4,7 @@ A Next.js App Router app with Google authentication and realtime Firestore todos
 
 ## Setup
 
-Use Node.js 20.9 or newer (an active LTS release is recommended).
+Use Node.js 24 or newer. The `.nvmrc` file selects Node.js 24.
 
 ```sh
 npm ci
